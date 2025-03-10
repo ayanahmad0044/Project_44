@@ -1,0 +1,12 @@
+{
+    "manifest_version": 3,
+    "version" : "1.0",
+    "name" : " Leads Tracker",
+    "action": {
+        "default_popup":"index.html",
+        "default_icon":"vector-dollar-sign-money-dollar-icon-dollar-bill-symbol_144356-24985.avif"
+    },
+    "permissions":[
+        "tabs"
+    ]
+}

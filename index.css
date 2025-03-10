@@ -1,0 +1,237 @@
+/* body {
+    margin: 0;
+    padding: 10px;
+    font-family: Arial, Helvetia, sans-serif;
+}
+
+
+input{
+    width: 100%;
+    padding-left:10px;
+    padding-right:10px;
+    padding-bottom:10px;
+    padding-top: 10px ;
+    box-sizing: border-box;
+    border: 1px solid #5f9341;
+    margin-bottom: 4px;
+
+
+
+
+}
+
+button {
+    color: var(--bg);
+    font-weight: 600;
+    background-image: linear-gradient(315deg,#d00808 -10% ,#680909 50%,#b32e2e 110%);
+    padding: 0.8rem 1.5em;
+    isolation: isolate;
+    box-shadow: 0 2px 3px 1px hs1(var(--glow-hue)50% 20% / 50%), inset 0 -10px 20px -10px
+    hsla(var(--shadow-hue),10%,90%,95%);
+    border-radius:0.66em;
+    scale:1;
+    transition: all var(--spring-duration) var(--spring-easing);
+    cursor: pointer;
+
+
+}
+
+#delete-btn:hover {
+    color: var(--bg);
+    font-weight: 600;
+    background-image: linear-gradient(315deg,#d00808 -10% ,#680909 50%,#b32e2e 110%);
+    padding: 0.8rem 1.5em;
+    isolation: isolate;
+    box-shadow: 0 2px 3px 1px hs1(var(--glow-hue)50% 20% / 50%), inset 0 -10px 20px -10px
+    hsla(var(--shadow-hue),10%,90%,95%);
+    border-radius:0.66em;
+    scale:1;
+    transition: all var(--spring-duration) var(--spring-easing);
+    cursor: pointer;
+
+}
+
+ul {
+    margin-top:20px;
+    list-style:none;
+    padding-left:0;
+
+
+}
+
+li {
+
+    margin-top:5px;
+
+}
+
+a {
+    color:#5f9341;
+}
+    */
+
+  /* Reset some default styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+
+/* h1 {
+    padding-top: 20px;
+    align-content: center;
+    text-decoration: cornsilk;
+    font-style: italic;
+    padding-bottom: 70px;
+    font-size: 40px;
+} */
+h1 {
+    padding-top: 20px;
+    padding-bottom: 70px;
+    font-size: 40px;
+    font-style: italic;
+    text-decoration: underline; /* Fix the "cornsilk" issue (text-decoration is not a color) */
+    text-align: center; /* Centers the text */
+    color: white; /* Set the initial text color */
+    
+    /* Apply the animation */
+    animation: fadeInBounce 3s ease-out, colorChange 5s infinite;
+}
+
+/* Keyframes for fading in and bouncing effect */
+@keyframes fadeInBounce {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    70% {
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Keyframes for changing text color */
+@keyframes colorChange {
+    0% {
+        color: cornsilk;
+    }
+    25% {
+        color: #3498db; /* Light Blue */
+    }
+    50% {
+        color: #e74c3c; /* Red */
+    }
+    75% {
+        color: #f39c12; /* Orange */
+    }
+    100% {
+        color: cornsilk;
+    }
+}
+
+
+
+
+/* Body Styling */
+body {
+    background-image: url('https://cmsassets.rgpub.io/sanity/images/dsfx7636/news/8f0be019dd4ec9e6d7d864d9becaa471b9678129-854x484.png?auto=format&fit=fill&q=80&w=414');
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+/* Input field animation */
+#input-el {
+    padding: 10px;
+    width: 300px;
+    border: 2px solid #ac0d0d;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    background-color: rgba(0,0,0,0.6);
+    transition: all 0.3s ease-in-out;
+    opacity:1;
+}
+
+/* Button animations */
+button {
+    color: var(--bg);
+    font-weight: 600;
+    background-image: linear-gradient(315deg,#d00808 -10% ,#680909 50%,#b32e2e 110%);
+    padding: 0.8rem 1.5em;
+    isolation: isolate;
+    box-shadow: 0 2px 3px 1px hs1(var(--glow-hue)50% 20% / 50%), inset 0 -10px 20px -10px
+    hsla(var(--shadow-hue),10%,90%,95%);
+    border-radius:0.66em;
+    scale:1;
+    transition: all var(--spring-duration) var(--spring-easing);
+    cursor: pointer;
+}
+
+/* Hover effect for buttons */
+button:hover {
+    transform: scale(1.1);
+    background-color: #b95729;
+}
+
+/* Animated input field */
+#input-el:focus {
+    border-color: #01101b;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+}
+
+/* Animated list appearance */
+#ul-el {
+    margin-top: 20px;
+    list-style: none;
+    padding: 0;
+    opacity: 1;
+    transition: opacity 1s ease-out;
+    
+}
+
+#ul-el.show {
+    opacity: 1;
+    color: blueviolet;
+}
+
+/* Tab button animation */
+#tab-btn {
+    animation: bounce 2s infinite;
+}
+
+/* Button Press Animation */
+button:active {
+    transform: scale(0.95);
+}
+
+/* Bounce Effect for Tab Button */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Button container styles */
+button {
+    position: relative;
+}
+
+  
