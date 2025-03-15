@@ -1,0 +1,137 @@
+<!DOCTYPE html> 
+<html lang="en">
+  <style>
+    body{
+
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   
+    }
+
+    .todo-grid,
+    .todo-input-grid{
+      display:grid;
+      grid-template-columns: 20pc 150px 100px;
+      column-gap: 10px;
+      row-gap: 10px;
+      align-items: center;
+
+    }
+    .todo-input-grid{
+      margin-bottom:10px;
+      align-items: stretch;
+    }
+
+    .name-input,
+    .due-date-input {
+      font-size: 20px;
+      padding:6px;
+    }
+
+    .add-todo-input{
+      background-color: green;
+      color:white;
+      border:none;
+      font-size: 20px;
+      cursor:pointer
+
+    }
+    .delete-todo-button{
+      background-color: darkred;
+      color:whitesmoke;
+      border:none;
+      font-size:15px;
+      cursor:pointer;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+  </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do List</title>
+</head>
+<body>
+    <p>To do List</p>
+    
+
+
+    <div class="todo-input-grid">
+    <input class="js-name-input name-input" placeholder="To do name" />
+    <input type="date" class="js-due-date due-date-input" />
+    <button onclick="addtodo()"
+    class="add-todo-input"
+    >Add</button>
+
+  </div>
+    <div class="js-todo-list todo-grid"></div>
+
+    <script>
+        const todolist = [
+            { name: "Make dinner",
+             Duedate: "2025-03-14" },
+            { name: 'Wash dishes',
+             Duedate: '2025-03-14' }
+        ];
+
+       
+        rendertodo();
+
+        function rendertodo() {
+            let todolistHTML = '';
+
+            for (let i = 0; i < todolist.length; i++) {
+                const todoObject = todolist[i];
+                const { name, Duedate } = todoObject;
+
+            const html = `
+                    <div>${name} </div>
+                
+                <div> ${Duedate}</div>
+                  <button onclick="
+                  deleteTodo(${i})
+                  " class="delete-todo-button">Delete</button>
+              
+          `;
+                todolistHTML += html;
+            }
+
+            console.log(todolistHTML); 
+
+            document.querySelector('.js-todo-list').innerHTML = todolistHTML;
+        }
+
+        function addtodo() {
+            const inputElement = document.querySelector('.js-name-input');
+            const name = inputElement.value.trim();
+
+            const dateinput = document.querySelector('.js-due-date');
+            const Duedate = dateinput.value.trim();
+
+            if (name && Duedate) {
+               
+                todolist.push({ name, Duedate });
+
+               
+                inputElement.value = '';
+                dateinput.value = '';
+
+               
+                rendertodo();
+            } else {
+                alert('Please fill in both name and due date');
+            }
+        }
+
+    
+        function deleteTodo(index) {
+            
+            todolist.splice(index, 1);
+
+            
+            rendertodo();
+        }
+    </script>
+
+</body>
+</html>
